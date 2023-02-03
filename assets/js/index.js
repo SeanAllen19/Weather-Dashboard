@@ -1,7 +1,5 @@
-var APIKey = 'f70f9a3b061e9d0c6c64a09bf5d796d8';
-var city
+var APIKey = 'f193647a2e1252e545175ee39dc45a80';
 var searchBtn = document.getElementById('search-btn');
-var queryURL
 var temp = document.getElementById('temp')
 var wind = document.getElementById('wind')
 var humidity = document.getElementById('humidity')
@@ -10,7 +8,7 @@ var skies = document.getElementById('skies')
 
 searchBtn.addEventListener('click', setup);
 
-function setup(e) {
+function setup() {
     city = document.querySelector('#city-input-text').value
     console.log(city)
     queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + APIKey + '&units=imperial';
@@ -22,16 +20,11 @@ function weather() {
     fetch(queryURL)
         .then(response => response.json())
         .then(data => gotData(data))
-    // document.createElement()
-}
-
-function retrived(data) {
-    uv = data
-    console.log(data)
 }
 function gotData(data) {
     info = data;
-    console.log(info);
+    console.log(info.coord.lon);
+    console.log(info.coord.lat)
     display()
 }
 function display() {

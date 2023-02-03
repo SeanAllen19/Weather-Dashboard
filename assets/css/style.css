@@ -1,7 +1,7 @@
 header {
     text-align: center;
     font-size: 3pc;
-    background-image: radial-gradient(rgb(86, 14, 144), indigo);
+    background-image: radial-gradient(rgba(175, 36, 191, 0.51), indigo);
     color: white;
 }
 
@@ -18,7 +18,7 @@ section div {
 }
 
 #city-input-text {
-    width: 15vw;
+    width: 15pc;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
@@ -26,8 +26,15 @@ section div {
 }
 
 #search-btn {
-    width: 15vw;
+    width: 15pc;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
+}
+
+@media screen and (max-width: 760px ) {
+    section div {
+        flex-wrap: wrap;
+        float: left;
+    }
 }
